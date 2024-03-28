@@ -3,8 +3,9 @@
 
 import Link from "next/link";
 import { Navbar } from "flowbite-react";
+import CartIcon from './Carticon';
 
-export default function Menu() {
+export default function Menu({cartItems}) {
   return (
     <Navbar className="mb-1" fluid rounded>
       <Navbar.Brand as={Link} href="/">
@@ -12,13 +13,12 @@ export default function Menu() {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link href="#" active>
-          Inicio
-        </Navbar.Link>
-        <Navbar.Link as={Link} href="#">
+        <Navbar.Link href="/">
           Productos
         </Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
+        <Navbar.Link href="#">
+          <CartIcon itemCount={cartItems}/>
+        </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

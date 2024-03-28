@@ -1,9 +1,9 @@
 
 "use client";
 
-import { Card } from "flowbite-react";
+import { Button, Card } from "flowbite-react";
 
-export default function ProductCard({ title, price, img }) {
+export default function ProductCard({ id, title, price, img, addCartItemHandler }) {
   return (
     <Card
       className="w-72 max-w-xs h-full flex flex-col" // Establece la altura máxima y flex para ajustar el contenido
@@ -25,12 +25,12 @@ export default function ProductCard({ title, price, img }) {
           <span className="text-lg font-bold text-gray-900 dark:text-white">
             {price}€
           </span>
-          <a
-            href="#"
+          <Button
             className="rounded-lg bg-blue-500 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          onClick={() => addCartItemHandler({id, title, price, img})}
           >
             Añadir
-          </a>
+          </Button>
         </div>
       </div>
     </Card>
