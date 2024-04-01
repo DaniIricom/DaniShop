@@ -6,7 +6,7 @@ import { Button, Card } from "flowbite-react";
 export default function ProductCard({ id, title, price, img, addCartItemHandler }) {
   return (
     <Card
-      className="w-72 max-w-xs h-full flex flex-col" // Establece la altura máxima y flex para ajustar el contenido
+      className="w-full max-w-sm rounded-lg bg-white shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" // Establece la altura máxima y flex para ajustar el contenido
       imgAlt={title}
       imgSrc={img}
     >
@@ -27,7 +27,7 @@ export default function ProductCard({ id, title, price, img, addCartItemHandler 
           </span>
           <Button
             className="rounded-lg bg-blue-500 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300"
-          onClick={() => addCartItemHandler({id, title, price, img})}
+            onClick={() => addCartItemHandler({ id, title, price, img })}
           >
             Añadir
           </Button>
